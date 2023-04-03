@@ -1,6 +1,6 @@
-<template>
+<template class="bg">
     <div class="container">
-        <span @click=$router.go(-1) class="back-button">go back</span>
+        <GoBackButton />
         <h1>{{ item.title }}</h1>
         <h4>{{ item.description }}</h4>
         <div class="flex">
@@ -24,7 +24,12 @@
 </template>
 
 <script>
+import GoBackButton from './GoBackButton.vue';
+
 export default {
+    components: {
+        GoBackButton
+    },
     data() {
         return {
             item: []
@@ -44,8 +49,6 @@ export default {
                 .then(response => response.json())
                 .then((response) => this.item = response)
                 .catch(err => console.error(err));
-            console.log(this.item)
-
         }
     }, mounted() {
         this.getData()
@@ -61,16 +64,7 @@ $line-height-general: 20px;
 $box-shadow-general: 0px 2px 16px 0px rgba(0, 0, 0, 0.75);
 $title: 20px;
 
-.back-button {
-    color: gray;
-    font-size: 20px;
-    border: 1px solid gray;
-    padding: $padding-general;
-    border-radius: 4px;
-    cursor: pointer;
-    align-self: baseline;
-    margin-left: 20px;
-}
+.bg {}
 
 .flex {
     display: flex;
@@ -86,7 +80,6 @@ $title: 20px;
 
 .container {
     width: $width-container;
-    margin: $margin;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -108,6 +101,7 @@ $title: 20px;
     div {
         img {
             box-shadow: $box-shadow-general;
+            align-self: flex-start;
         }
     }
 }

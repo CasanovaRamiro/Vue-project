@@ -1,5 +1,4 @@
 <script setup>
-import CardBoard from './components/CardBoard.vue';
 
 </script>
 

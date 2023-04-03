@@ -37,8 +37,6 @@ export default {
                 .then(response => response.json())
                 .then((response) => this.listItems = response)
                 .catch(err => console.error(err));
-            console.log(this.listItems)
-
         }
     }, mounted() {
         this.getData()

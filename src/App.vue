@@ -8,7 +8,6 @@ import CardBoard from './components/CardBoard.vue';
         <router-view>
 
         </router-view>
-        <!-- <CardBoard /> -->
     </div>
 </template>
 

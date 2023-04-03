@@ -1,10 +1,11 @@
 <template>
+    <h1 class="title">Mexican Food Recipes</h1>
     <div class="container">
+
         <div v-for="item in listItems" class="card">
-
-            <router-link :to="{ name: 'CardDetail', params: { id: item.id } }">
+            <router-link style="text-decoration: none; color: inherit;"
+                :to="{ name: 'CardDetail', params: { id: item.id } }">
                 <img class="card-image" :src="item.image" />
-
                 <div class="card-content activator">
                     <span class="card-title activator grey-text text-darken-4">{{ item.title }}</span>
                     <p>{{ item.difficulty }}</p>
@@ -47,14 +48,23 @@ export default {
 
 <style lang="scss" scoped>
 $width-container: 100%;
-$width-fill: 100%;
 $margin: 30px auto;
 $padding-general: 5px;
 $padding-out: 24px;
 $line-height-general: 20px;
 $box-shadow-general: 0px 2px 16px 0px rgba(0, 0, 0, 0.75);
 $title: 20px;
+$black-font: rgb(40, 40, 40);
 
+.title {
+    width: $width-container*0.8;
+    margin: auto;
+    font-size: 40px;
+    text-align: center;
+    color: $black-font;
+    border-bottom: solid 2px $black-font;
+    padding: $padding-general;
+}
 
 .container {
     width: $width-container;
@@ -62,15 +72,22 @@ $title: 20px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    gap: 10px;
+    gap: 20px;
+
 
     .card {
-        width: calc($width-fill/7);
+        width: calc($width-container/7);
         overflow: hidden;
         border-radius: 4px;
         box-shadow: $box-shadow-general;
         position: relative;
         padding-bottom: 20px;
+        color: $black-font;
+        transition: 0.1s;
+    }
+
+    .card:hover {
+        transform: scale(1.02);
     }
 }
 

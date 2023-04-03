@@ -1,6 +1,6 @@
 import { createApp } from "vue";
 import { createRouter, createWebHistory } from "vue-router";
-import "./style.css";
+import "./style.scss";
 import App from "./App.vue";
 import CardBoard from "./components/CardBoard.vue";
 import CardDetail from "./components/CardDetail.vue";

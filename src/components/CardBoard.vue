@@ -28,7 +28,7 @@ export default {
             const options = {
                 method: 'GET',
                 headers: {
-                    'X-RapidAPI-Key': '9f42f2452dmsh3663ac4e82e18b3p13787fjsn723fb76e2215',
+                    'X-RapidAPI-Key': import.meta.env.VITE_API_KEY,
                     'X-RapidAPI-Host': 'the-mexican-food-db.p.rapidapi.com'
                 }
             };

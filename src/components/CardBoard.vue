@@ -1,8 +1,9 @@
 <template>
     <h1 class="title">Mexican Food Recipes</h1>
+    <button @click="pageUp">page +1</button>
+    <button @click="pageDown">page -1</button>
     <div class="container">
-
-        <div v-for="item in listItems" class="card">
+        <div v-for="item in listItems.slice(page * itemsPerPage, (page + 1) * itemsPerPage)" class="card">
             <router-link style="text-decoration: none; color: inherit;"
                 :to="{ name: 'CardDetail', params: { id: item.id } }">
                 <img class="card-image" :src="item.image" />
@@ -17,13 +18,28 @@
 </template>
 
 <script>
+
+
 export default {
     data() {
         return {
             listItems: [],
+            page: 0,
+            itemsPerPage: 10,
         }
     },
     methods: {
+        pageUp() {
+            if (Math.floor(this.listItems.length / this.itemsPerPage) === this.page) return
+            console.log(Math.floor(this.listItems.length / this.itemsPerPage), this.page)
+            this.page += 1
+            console.log(this.page)
+        },
+        pageDown() {
+            if (this.page === 0) return
+            this.page -= 1
+            console.log(this.page)
+        },
         async getData() {
             const options = {
                 method: 'GET',
@@ -40,6 +56,7 @@ export default {
         }
     }, mounted() {
         this.getData()
+
     }
 }
 </script>

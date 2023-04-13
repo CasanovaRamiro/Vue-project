@@ -16,10 +16,10 @@ export default {
     padding: 5px;
     border-radius: 4px;
     cursor: pointer;
-    align-self: baseline;
-    margin-left: 20px;
+    align-self: center;
     background-color: #ffffff;
     transition: 0.1s;
+    margin-top: 20px;
 }
 
 .back-button:hover {

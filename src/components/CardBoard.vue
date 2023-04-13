@@ -108,6 +108,9 @@ $black-font: rgb(40, 40, 40);
         cursor: pointer;
         box-shadow: 0px 1px 8px 0px rgba(0, 0, 0, 0.75);
         transition: 0.2s;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
     }
 
     span:hover {

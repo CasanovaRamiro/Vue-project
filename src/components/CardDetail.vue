@@ -68,28 +68,33 @@ $title: 20px;
 .flex {
     display: flex;
     flex-direction: row;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .details {
     width: calc($width-container/3);
+    align-self: baseline;
 }
 
 .container {
-    width: $width-container;
+    width: 80%;
+    margin: auto;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     gap: 10px;
 
     h4 {
         color: rgb(57, 55, 55);
-        width: calc($width-container/1.3);
+        width: $width-container;
         text-align: center;
+        border-bottom: solid 2px black;
+        padding-bottom: 20px;
     }
 
     ul {

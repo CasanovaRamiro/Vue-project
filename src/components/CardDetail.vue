@@ -6,10 +6,11 @@
         <div class="flex">
             <img class="card-image" :src=item.image />
             <div class="details">
-                <h4> ingredients</h4>
+                <h4> Ingredients</h4>
                 <ul>
                     <li v-for="ingredient in item.ingredients">{{ ingredient }}</li>
                 </ul>
+                <h4> Steps</h4>
 
                 <ul>
                     <fieldset v-for="method in item.method">
@@ -98,7 +99,6 @@ $title: 20px;
     }
 
     ul {
-        border-top: solid 2px black;
         padding-top: 10px;
     }
 
